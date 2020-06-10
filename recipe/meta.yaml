@@ -34,7 +34,6 @@ requirements:
 test:
   imports:
     - cf
-    - cf.abstract
   commands:
     - pip check
   requires:
