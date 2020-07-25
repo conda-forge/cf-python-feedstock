@@ -1,5 +1,5 @@
 {% set name = "cf-python" %}
-{% set version = "3.5.1" %}
+{% set version = "3.6.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fae4fb7f3daf11d5b8c10a8ff2e5709e430564bb25714ac1a75313624dffed03
+  sha256: 863b179bd5374113217f75c3086cafed663f4c87326de9405532eca7a6f2bdc6
 
 build:
   number: 0
