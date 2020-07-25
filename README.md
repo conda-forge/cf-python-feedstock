@@ -5,7 +5,7 @@ Home: https://pypi.org/project/cf-python/
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A CF-compliant earth science data analysis library
 
