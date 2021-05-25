@@ -1,5 +1,5 @@
 {% set name = "cf-python" %}
-{% set version = "3.8.0" %}
+{% set version = "3.9.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2c769f73d52ad99587aac7672a96e94e158a66565b73db7cfad5f777f487bcb3
+  sha256: c5d1c9c513ab2c5df46fdf894af4dbb61b144587065d47f69922be04745d86ac
 
 build:
   number: 0
