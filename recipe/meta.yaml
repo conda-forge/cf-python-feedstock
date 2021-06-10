@@ -30,6 +30,7 @@ requirements:
     - netcdf4 >=1.5.4
     - numpy >=1.15
     - psutil >=0.6.0
+    - esmpy
 
 test:
   imports:
