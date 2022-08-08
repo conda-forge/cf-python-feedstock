@@ -19,17 +19,26 @@ requirements:
   build:
     - {{ compiler('c') }}
     - make
+    - cfdm
+    - cftime
+    - cfunits
+    - netcdf4
+    - netcdf-flattener
+    - numpy
+    - psutil
+    - packaging
+    - pyparsing
   host:
     - python
     - pip
   run:
     - python
-    - cfdm >=1.9.0.0,<1.9.1.0
-    - cftime >=1.5.0
-    - cfunits >=3.3.3
-    - netcdf4 >=1.5.4
-    - numpy >=1.15
-    - psutil >=0.6.0
+    - cfdm 
+    - cftime 
+    - cfunits 
+    - netcdf4 
+    - numpy 
+    - psutil 
 
 test:
   imports:
