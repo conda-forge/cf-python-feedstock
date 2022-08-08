@@ -1,0 +1,20 @@
+--- a/cf/umread_lib/c-lib/Makefile	
++++ b/cf/umread_lib/c-lib/Makefile
+@@ -5,7 +5,7 @@
+ 
+ UNAME_S := $(shell uname -s)
+ ifeq ($(UNAME_S),Linux)
+-    CC=gcc
++    CC=${GCC}
+     LD=ld
+     LDFLAGS=-shared --build-id
+     CFLAGS += -DLINUX
+@@ -19,7 +19,7 @@
+     LD_ARCHIVE_FLAGS=-force_load
+ endif
+ 
+-CPP=gcc -E -P
++CPP=${GCC} -E -P
+ OBJS = umfile.o error.o filetype.o \
+ 	malloc.o linklist.o new_structs.o swap.o
+ 
