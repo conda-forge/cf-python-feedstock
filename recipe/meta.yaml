@@ -38,7 +38,7 @@ test:
     - cf
   commands:
     - pip check
-    - python -c "import unittest; from cf.test import test_pp; unittest.main(test_pp)"
+    - python -c "from cf.test import run_tests; run_tests.run_test_suite_setup_0(); run_tests.run_test_suite_setup_1(); run_tests.run_test_suite()"
   requires:
     - pip
 
