@@ -46,6 +46,7 @@ test:
     - cf
   commands:
     - pip check
+    - python -c "import unittest; from cf.test import test_pp; unittest.main(test_pp)"
   requires:
     - pip
 
