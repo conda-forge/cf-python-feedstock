@@ -9,9 +9,11 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 8d7f82a9563c0ae46c2725faeca43ee3a2db12a9b75c5a819bcb1b5ef107f322
+  patches:
+    - 0001-Fix-gcc_path-umread_lib-linux.patch  # [linux]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or py<35]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -36,6 +38,7 @@ test:
     - cf
   commands:
     - pip check
+    - python -c "import unittest; from cf.test import test_pp; unittest.main(test_pp)"
   requires:
     - pip
 
