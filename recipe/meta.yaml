@@ -1,6 +1,5 @@
 {% set name = "cf-python" %}
 {% set version = "3.13.0" %}
-{% set build = 1 %}
 
 
 package:
@@ -14,7 +13,7 @@ source:
     - 0001-Fix-gcc_path-umread_lib-linux.patch  # [linux]
 
 build:
-  number: {{ build }}
+  number: 1
   skip: true  # [win or py<35]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -22,26 +21,17 @@ requirements:
   build:
     - {{ compiler('c') }}
     - make
-    - cfdm
-    - cftime
-    - cfunits
-    - netcdf4
-    - netcdf-flattener
-    - numpy
-    - psutil
-    - packaging
-    - pyparsing
   host:
     - python
     - pip
   run:
     - python
-    - cfdm 
-    - cftime 
-    - cfunits 
-    - netcdf4 
-    - numpy 
-    - psutil 
+    - cfdm >=1.9.0.0,<1.9.1.0
+    - cftime >=1.5.0
+    - cfunits >=3.3.3
+    - netcdf4 >=1.5.4
+    - numpy >=1.15
+    - psutil >=0.6.0
 
 test:
   imports:
