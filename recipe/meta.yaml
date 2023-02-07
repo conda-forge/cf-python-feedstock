@@ -1,5 +1,5 @@
 {% set name = "cf-python" %}
-{% set version = "3.13.1" %}
+{% set version = "3.14.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8af57ea299afd3986a2dbb829524afce07d1e0c8c977702394bf10fbefb22821
+  sha256: 4d93e28c8bbe06ae51856e476b15563ea528a75f7d266eec73ed8d8c2e027fb9
   patches:
     - 0001-Fix-gcc_path-umread_lib-linux.patch  # [linux]
 
@@ -26,22 +26,31 @@ requirements:
     - pip
   run:
     - python
-    - cfdm >=1.9.0.4,<1.9.1.0
-    - cftime >=1.5.0
-    - cfunits >=3.3.4
     - netcdf4 >=1.5.4
-    - numpy >=1.15
+    - cftime >=1.6.0
+    - numpy >=1.22
+    - cfdm >=1.10.0.2,<1.10.1.0
     - psutil >=0.6.0
+    - cfunits >=3.3.4
+    - dask-core >=3.3.4
     - packaging >=20.0
 
 test:
+  source_files:
+    - cf/test/
   imports:
     - cf
   commands:
     - pip check
-    - python -c "import unittest; from cf.test import test_pp; unittest.main(test_pp)"
+    - pushd cf/test && python create_test_files.py && python setup_create_field.py && python -c "import unittest; from cf.test import test_pp; unittest.main(test_pp)"
   requires:
     - pip
+    - pytest
+    - pycodestyle
+    - esmpy
+    - mpich
+    - pytest-json-report
+    - scipy
 
 about:
   home: https://pypi.org/project/cf-python/
