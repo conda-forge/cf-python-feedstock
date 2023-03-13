@@ -1,11 +1,11 @@
-About cf-python
-===============
+About cf-python-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cf-python-feedstock/blob/main/LICENSE.txt)
 
 Home: https://pypi.org/project/cf-python/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cf-python-feedstock/blob/main/LICENSE.txt)
 
 Summary: A CF-compliant earth science data analysis library
 
