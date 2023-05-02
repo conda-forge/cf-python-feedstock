@@ -1,5 +1,5 @@
 {% set name = "cf-python" %}
-{% set version = "3.14.1" %}
+{% set version = "3.15.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c0f8e07d0207f24be4049b3d8200c2edbbdfd9067a2990f2fc3df62035da8614
+  sha256: 1a16d312826620f4c4f290a79585bd3d81da60ad33caeaca1cb0e72d14d97023
   patches:
     - 0001-Fix-gcc_path-umread_lib-linux.patch  # [linux]
 
@@ -29,7 +29,7 @@ requirements:
     - netcdf4 >=1.5.4
     - cftime >=1.6.0
     - numpy >=1.22
-    - cfdm >=1.10.0.3,<1.10.1.0
+    - cfdm >=1.10.1.0,<1.10.2.0
     - psutil >=0.6.0
     - cfunits >=3.3.5
     - dask-core >=2022.12.1
