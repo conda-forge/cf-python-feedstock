@@ -1,5 +1,5 @@
 {% set name = "cf-python" %}
-{% set version = "3.15.3" %}
+{% set version = "3.15.4" %}
 
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e3ce2506ffe0e991a8ada170935ed1001aed14b02323a8b1bc837ce955dd2d61
+  sha256: 4977fb4478f1743916426fe7fadf05ebe1128c9292d48e41774f6ef24c2566cf
   patches:
     - 0001-Fix-gcc_path-umread_lib-linux.patch  # [linux]
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win or py<35]
   script: {{ PYTHON }} -m pip install . -vv
 
