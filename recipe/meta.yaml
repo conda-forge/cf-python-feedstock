@@ -13,7 +13,7 @@ source:
     - 0001-Fix-gcc_path-umread_lib-linux.patch  # [linux]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or py<35]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -24,6 +24,7 @@ requirements:
     - make
   host:
     - python
+    - setuptools
     - pip
   run:
     - scipy >=1.10.0
