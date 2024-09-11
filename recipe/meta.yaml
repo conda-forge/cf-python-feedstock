@@ -24,6 +24,7 @@ requirements:
     - make
   host:
     - python
+    - setuptools
     - pip
   run:
     - scipy >=1.10.0
