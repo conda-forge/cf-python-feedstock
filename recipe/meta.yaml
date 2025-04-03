@@ -1,5 +1,5 @@
 {% set name = "cf-python" %}
-{% set version = "3.16.3" %}
+{% set version = "3.17.0" %}
 
 
 package:
@@ -7,14 +7,14 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c59a788fd244669934fa77307d5449323671fd3925cf32eef3983f2e421cdd3c
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 156673d8501fd18979eaf13342b43257a829d0ea22f2a6c219429de0e58d9292
   patches:
     - 0001-Fix-gcc_path-umread_lib-linux.patch  # [linux]
 
 build:
   number: 0
-  skip: true  # [win or py<38]
+  skip: true  # [win or py<=39]
   # This one is not in the metadata, but the cfdm numpy<2 restriction makes it unsolvable.
   skip: true  # [py>312]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -30,13 +30,13 @@ requirements:
     - pip
   run:
     - python
-    - netcdf4 >=1.6.5
-    - cftime >=1.6.2
-    - numpy >=1.22,<2.0
-    - cfdm >=1.11.2.0,<1.11.3.0
+    - netcdf4 >=1.7.2
+    - cftime >=1.6.4
+    - numpy >=2.0.0
+    - cfdm >=1.12.1.0,<1.12.2.0
     - psutil >=0.6.0
     - cfunits >=3.3.7
-    - dask-core >=2024.6.0,<=2024.7.1
+    - dask-core >=2025.2.0,<=2025.3.0
     - packaging >=20.0
     - scipy >=1.10.0
     - h5netcdf >=1.3.0
