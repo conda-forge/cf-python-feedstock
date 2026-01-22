@@ -13,8 +13,8 @@ source:
     - 0001-Fix-gcc_path-umread_lib-linux.patch  # [linux]
 
 build:
-  number: 0
-  skip: true  # [win or py<311]
+  number: 1
+  skip: true  # [win or py<310]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
