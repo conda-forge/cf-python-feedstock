@@ -35,7 +35,6 @@ requirements:
     - distributed >=2025.5.1
     - netcdf4 >=1.7.2
     - numpy >=2.0.0
-    - numpy >=2,<2.2
     - packaging >=20.0
     - psutil >=0.6.0
     - pyfive >=1.1.1
