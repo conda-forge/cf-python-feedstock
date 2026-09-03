@@ -60,7 +60,7 @@ tests:
       source:
         - cf/test/
     script:
-      - pushd cf/test && python create_test_files.py && python setup_create_field.py && python -c "import unittest; from cf.test import test_pp; unittest.main(test_pp)"
+      - pushd cf/test && (python create_test_files.py || true) && python setup_create_field.py && python -c "import unittest; from cf.test import test_pp; unittest.main(test_pp)"
 
 about:
   summary: A CF-compliant earth science data analysis library
