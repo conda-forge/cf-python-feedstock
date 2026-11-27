@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "3.21.0"
+  version: "3.22.0"
 
 package:
   name: cf-python
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/c/cf-python/cf_python-${{ version }}.tar.gz
-  sha256: 792143b989d7ec91819746fa001389dcbd33aa6be2632fc839db0dbddbed6d80
+  sha256: 5368d6812efe04ded718e292d60d0980c98e04b9acaeea5f7e1fb1d1e798d5a3
 
 build:
-  number: 1
+  number: 0
   skip:
     - match(python, "<3.11")
     - win
