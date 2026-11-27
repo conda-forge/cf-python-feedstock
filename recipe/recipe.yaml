@@ -28,7 +28,7 @@ requirements:
     - pip
   run:
     - python
-    - cfdm >=1.13.3.0,<1.13.4.0
+    - cfdm >=1.13.4.0,<1.13.5.0
     - cftime >=1.6.4
     - cfunits >=3.3.7
     - dask-core >=2025.5.1
